@@ -1,0 +1,63 @@
+
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+
+    <id>com.youversion.bible</id>
+
+    <name>Bible</name>
+    
+    <versionNumber>10.10.0</versionNumber>
+
+    <buildId>1</buildId>
+
+    <description></description>
+    <author>Nettek</author>
+    <authorId>gYAAgISyPff3icYT0zYNfxjXN6g</authorId>
+   	<cascadesTheme>dark</cascadesTheme>
+    <initialWindow>
+        <autoOrients>true</autoOrients>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+    </initialWindow>
+    <category>core.games</category>
+    <splashScreens>
+       <image>yvsplash.png</image>
+    </splashScreens>
+    <icon>
+       <image>bible.png</image>
+    </icon>
+    <configuration name="Device-Debug">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="arm/o.le-v7-g/youversion" entry="true" type="Qnx/Elf">youversion</asset>
+    </configuration>
+    <configuration name="Device-Release">
+       <entryPointType>Qnx/Cascades</entryPointType>
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="arm/o.le-v7/youversion.so" entry="true" type="Qnx/Elf">youversion.so</asset>
+    </configuration>
+    <configuration name="Device-Profile">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="arm-p/o.le-v7-g/youversion" entry="true" type="Qnx/Elf">youversion</asset>
+    </configuration>
+    <configuration name="Simulator-Debug">
+       <platformArchitecture>x86</platformArchitecture>
+       <asset path="x86/o-g/youversion" entry="true" type="Qnx/Elf">youversion</asset>
+    </configuration>
+    
+    <!--  The icon for the application -->
+
+    <asset path="assets">assets</asset>
+    
+    <!-- Locale support -->
+    <asset path="translations" dest="qm">
+        <include name="*.qm"/>
+    </asset>
+    <asset path="assets/images/bible.png">bible.png</asset>
+    <asset path="assets/images/yvsplash.png">yvsplash.png</asset>
+    
+    <!-- Request permission to execute native code.  Required for native applications. -->
+    <permission system="true">run_native</permission>
+    <permission>access_internet</permission>
+    <permission>run_when_backgrounded</permission>
+    <env var="LD_LIBRARY_PATH" value="app/native/lib:/usr/lib/qt4/lib"/>
+
+</qnx>
